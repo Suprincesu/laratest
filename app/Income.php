@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Income extends Model
 {
     protected $fillable = [
-        'salary'
+        'salary','user_id'
     ];
 }

@@ -13,20 +13,25 @@
 
 use App\Http\Controllers\IncomeController;
 
-// Route::post('/login', 'IncomeController@index');
+Route::get('/', 'PageController@showHomepage');
+
+Route::get('/login', 'PageController@showLogin');
+Route::get('/register', 'PageController@showRegister');
+Route::get('/dashboard', 'PageController@showDashboard');
+Route::get('/income', 'PageController@showIncome');
+Route::get('/expenses', 'PageController@showExpense');
+Route::get('/logout', 'UserController@logout');
+
+Route::post('/login', 'UserController@login');
 Route::post('/reigster', 'UserController@register');
-Route::get('/contact', function(){
-    return view('contact'); 
+Route::get('/contact', function () {
+    return view('contact');
 });
 
-
-
-Route::get('/income', 'IncomeController@index');
 Route::post('/income', 'IncomeController@store');
 Route::patch('/income/{id}', 'IncomeController@update');
 Route::delete('/income/{id}', 'IncomeController@destroy');
 
-Route::get('/expenses', 'ExpenseController@index');
 Route::post('/expenses', 'ExpenseController@store');
 Route::patch('/expenses/{id}', 'ExpenseController@update');
 Route::delete('/expenses/{id}', 'ExpenseController@destroy');

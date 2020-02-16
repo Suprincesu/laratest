@@ -17,6 +17,8 @@ class Income extends Migration
             $table->bigIncrements('id');
             $table->float('salary');
             $table->date('salary_received');
+            $table->unsignedBigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
