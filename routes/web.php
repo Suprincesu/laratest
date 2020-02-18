@@ -29,6 +29,7 @@ Route::get('/contact', function () {
 });
 
 Route::post('/income', 'IncomeController@store');
+Route::get('/income/edit/{id}', 'PageController@showEditIncome');
 Route::patch('/income/{id}', 'IncomeController@update');
 Route::delete('/income/{id}', 'IncomeController@destroy');
 

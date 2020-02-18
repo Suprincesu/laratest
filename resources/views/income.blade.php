@@ -28,7 +28,7 @@
                         <td>{{$income->salary_received}}</td>
                         <td>
                             <div class="row">
-                            <button  class="btn btn-info mr-1">Edit</button>
+                                <a class="btn btn-info mr-1" href="/income/edit/{{$income->id}}">Edit</a>
                         <form method="post" action="/income/{{$income->id}}">
                                 @csrf
                                 @method('DELETE')

@@ -19,9 +19,13 @@ class IncomeController extends Controller
         return redirect('/income');
     }
 
-    //update
-    function update(){
-
+    // form post edit data
+    public function update(Request $request,$id){
+        $income=Income::findOrFail($id);
+        $income->salary=$request->salary;
+        $income->salary_received=$request->salary_received;
+        $income->save();
+        return redirect('/income');
     }
 
     //delete

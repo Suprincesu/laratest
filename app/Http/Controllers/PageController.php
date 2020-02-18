@@ -46,6 +46,14 @@ class PageController extends Controller
         }
     }
 
+    public function showEditIncome($id){
+        if (Auth::check()) {
+            $income = Income::where("id","=",$id)->first();
+            return view('incomeedit', compact('income', $income));
+        } else {
+            return Redirect('login');
+        }
+    }
 
     public function showExpense()
     {
